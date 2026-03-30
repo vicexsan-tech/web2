@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Temperatura de la zona de crimen para varios meses del año</title>
+
+  <!-- OpenLayers -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="./css/styles2.css">
+</head>
+
+<body>
+  <header class="app-header">
+    <div class="app-title">Temperatura de la zona de crimen para varios meses del año</div>
+    <div class="toolbar">
+        <button id="btn-refresh" type="button">Actualizar</button>
+      </div>
+  </header>
+
+  <main class="app-main">
+    <!-- MAPA -->
+    <section id="map" class="map"></section>
+    <!-- Controles  -->
+    <aside class="panel">
+      <h3>Información</h3>
+      <div id="info" class="info">
+        Haz click en el mapa para obtener coordenadas.
+      </div>
+      <hr>
+<strong>Capas</strong>
+<br>
+
+<div class="layer-control">
+  <label for="tema-select">Mes</label>
+  <select id="tema-select">
+    <option value="capa1" selected>Abril</option>
+    <option value="capa2">Mayo</option>
+    <option value="capa3">Junio</option>
+    <option value="capa4">Julio</option>
+    <option value="capa5">Agosto</option>
+    <option value="capa6">Septiembre</option>
+    <option value="capa7">Octubre</option>
+  </select>
+</div>
+
+      <hr>
+      <div class="basemap-control">
+        <label for="basemap-select">Basemap</label>
+        <select id="basemap-select">
+          <option value="osm" selected>OpenStreetMap</option>
+          <option value="light">Light Gray</option>
+          <option value="dark">Dark Gray</option>
+        </select>
+      </div>
+
+      <hr>
+      <h3>Leyenda</h3>
+      <div class="custom-legend">
+        <div><span class="box" style="background:#b3b3ff"></span> [5,3 - 9) ºC</div>
+        <div><span class="box" style="background:#b2ffb2"></span> [9 - 14) ºC</div>
+        <div><span class="box" style="background:#ffffb2"></span> [14 - 19) ºC</div>
+        <div><span class="box" style="background:#ffe0b2"></span> [19 - 23) ºC</div>
+        <div><span class="box" style="background:#ffb2b2"></span> [23 - 27,2] ºC</div>
+      </div>
+
+    <div id="custom-legend">
+      <div class="legend-item">
+        <span class="line black"></span> Comarca
+      </div>
+    </div>
+
+      <div class="custom-legend">
+        <div><span class="dot red"></span> Puntos clave del crimen</div>
+      </div>
+    </aside>
+  </main>
+  <!-- JS libs -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+  <!-- App JS -->
+  <script src="./js/app2.js"></script>
+</body>
+</html>
